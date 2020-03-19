@@ -1,0 +1,34 @@
+{
+	"ncot": 1,
+	"date": "12/12/12",
+	"infoadicional": "Cliente webea con mi tiempo",
+	"subtotal": 123123,
+	"discounttotal": 500,
+	"fletes": "",
+	"embalaje": "",
+	"netototal": "",
+	"ivatotal": "",
+	"currency": "CLP",
+	"nameclient": "Royal America",
+	"datedelivery": "14/14/14",
+	"rutclient": "12.123.123-1",
+	"namecontact": "Giandomenico Barbagelata",
+	"addrclient": "Av Condell 1198",
+	"comunaclient": "Maipu",
+	"cityclient": "Maipu",
+	"namesalesman": "Macarena hernandez",
+	"phonesalesman": "+569 0000 0000",
+	"items" : [
+		{
+			"articulocode": "123435312",
+			"description": "",
+			"qty": "",
+			"um": "",
+			"discount": "",
+			"priceunit": "",
+			"priceunitdiscount": "",
+			"itemtotal": "",
+		},
+	]
+
+}
