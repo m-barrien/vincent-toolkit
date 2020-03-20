@@ -2,12 +2,13 @@
 	"ncot": 1,
 	"date": "12/12/12",
 	"infoadicional": "Cliente webea con mi tiempo",
-	"subtotal": 123123,
+	"subtotal": 1000,
 	"discounttotal": 500,
 	"fletes": "",
 	"embalaje": "",
-	"netototal": "",
-	"ivatotal": "",
+	"netototal": "500",
+	"ivatotal": "120",
+	"totalapagar": "620",
 	"currency": "CLP",
 	"nameclient": "Royal America",
 	"datedelivery": "14/14/14",
@@ -18,17 +19,39 @@
 	"cityclient": "Maipu",
 	"namesalesman": "Macarena hernandez",
 	"phonesalesman": "+569 0000 0000",
+	"email":"info@vincentsolar.com",
 	"items" : [
 		{
 			"articulocode": "123435312",
-			"description": "",
-			"qty": "",
-			"um": "",
-			"discount": "",
-			"priceunit": "",
-			"priceunitdiscount": "",
-			"itemtotal": "",
-		},
+			"description": "Panel solar 1",
+			"qty": "2",
+			"um": "UN",
+			"discount": "20.00",
+			"priceunit": "70000",
+			"priceunitdiscount": "50000",
+			"itemtotal": "100000"
+		} ,		
+		{
+			"articulocode": "3232131233",
+			"description": "Inversor Solar Vic",
+			"qty": "3",
+			"um": "UN",
+			"discount": "10.00",
+			"priceunit": "100000",
+			"priceunitdiscount": "85000",
+			"itemtotal": "235000"
+		} ,
+		{
+			"articulocode": "444444444",
+			"description": "MC4 Conector",
+			"qty": "10",
+			"um": "UN",
+			"discount": "0.00",
+			"priceunit": "500",
+			"priceunitdiscount": "450",
+			"itemtotal": "4500"
+		} 
+
 	]
 
 }

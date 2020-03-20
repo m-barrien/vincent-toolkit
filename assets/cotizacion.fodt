@@ -2060,7 +2060,7 @@
       <text:p text:style-name="P19">E-Mail</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A1" office:value-type="string">
-      <text:p text:style-name="P40"><text:a xlink:type="simple" xlink:href="mailto:email@vincentsolar.com" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="T5">email@vincentsolar.com</text:span></text:a><text:span text:style-name="T5"> <text:s/>Fono: &lt;&lt;phonesalesman&gt;&gt;</text:span></text:p>
+      <text:p text:style-name="P40"><text:a xlink:type="simple" xlink:href="mailto:&lt;&lt;email&gt;&gt;" text:style-name="Internet_20_link" text:visited-style-name="Visited_20_Internet_20_Link"><text:span text:style-name="T5">&lt;&lt;email&gt;&gt;</text:span></text:a><text:span text:style-name="T5"> <text:s/>Fono: &lt;&lt;phonesalesman&gt;&gt;</text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
@@ -2131,122 +2131,7 @@
       <text:p text:style-name="P25">&lt;&lt;itemtotal0&gt;&gt;</text:p>
      </table:table-cell>
     </table:table-row>
-    <table:table-row>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P37">2</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;articulocode1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P32">&lt;&lt;description1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;qty1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;um1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;discount1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunit1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunitdiscount1&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;itemtotal1&gt;&gt;</text:p>
-     </table:table-cell>
-    </table:table-row>
-    <table:table-row>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P37">3</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;articulocode2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P32">&lt;&lt;description2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;qty2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;um2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;discount2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunit2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunitdiscount2&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;itemtotal2&gt;&gt;</text:p>
-     </table:table-cell>
-    </table:table-row>
-    <table:table-row>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P37">4</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;articulocode3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P32">&lt;&lt;description3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;qty3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;um3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;discount3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunit3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunitdiscount3&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;itemtotal3&gt;&gt;</text:p>
-     </table:table-cell>
-    </table:table-row>
-    <table:table-row>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P41">5</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;articulocode4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P32">&lt;&lt;description4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;qty4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;um4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;discount4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunit4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;priceunitdiscount4&gt;&gt;</text:p>
-     </table:table-cell>
-     <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P25">&lt;&lt;itemtotal4&gt;&gt;</text:p>
-     </table:table-cell>
-    </table:table-row>
+    <!--rows-->
    </table:table>
    <text:p text:style-name="Standard"/>
   </office:text>
