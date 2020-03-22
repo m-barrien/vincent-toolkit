@@ -1,13 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 const child_process = require('child_process');
-function replace_all(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt;") {
+
+module.exports.replace_all = function replace_all(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt;") {
 	_filestring = filestring + " ";
 	Object.keys(payload).forEach(function(key) {
 		if (key != "items") {
  			//console.table('Key : ' + key + ', Value : ' + payload[key])
  			_filestring = _filestring.replace( opentag + key + closetag, payload[key])
  			if (key == "email") {
+ 				//do it twice
  				_filestring = _filestring.replace( opentag + key + closetag, payload[key])
  			}
  			//console.log(opentag + key + closetag)
@@ -15,7 +17,7 @@ function replace_all(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt;"
 	})	
 	return _filestring;
 }
-function items_to_rows(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt;") {
+module.exports.replace_items_to_rows = function replace_items_to_rows(payload, filestring, row_place_tag="<!--rows-->", opentag="&lt;&lt;" ,closetag="&gt;&gt;") {
 	_filestring = filestring + " ";
 	
 	const rowstring = '<table:table-row><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P41">ITEMCOUNT</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;articulocode&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P32">&lt;&lt;description&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;qty&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;um&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;discount&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;priceunit&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;priceunitdiscount&gt;&gt;</text:p></table:table-cell><table:table-cell table:style-name="Table5.A2" office:value-type="string"><text:p text:style-name="P25">&lt;&lt;itemtotal&gt;&gt;</text:p></table:table-cell></table:table-row>';
@@ -32,25 +34,17 @@ function items_to_rows(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt
 		})	
 		compiled_rows = compiled_rows + _new_row;
 	});
-	return _filestring.replace("<!--rows-->", compiled_rows);
+	return _filestring.replace(row_place_tag, compiled_rows);
 }
 
-function write_to_file(path, string, encoding="utf-8") {
-	fs.writeFileSync(path, string, encoding, function (err) {
+module.exports.string_to_file = function string_to_file(path, content_string, encoding="utf-8") {
+	fs.writeFileSync(path, content_string, encoding, function (err) {
 	    if (err) {
 	        return console.log(err);
 	    }
 	}); 
 	return true;
 }
-function fodt_to_pdf(filename, outdir="./payloads/") {
+module.exports.fodt_to_pdf = function fodt_to_pdf(filename, outdir="./payloads/") {
 	child_process.execSync(`soffice --convert-to pdf --outdir ${outdir} ${outdir}${filename} --headless`);
 }
-var filestring = fs.readFileSync('./assets/cotizacion.fodt',"utf-8").toString();
-var payload = fs.readFileSync('./payload.json',"utf-8").toString();
-payload = JSON.parse(payload);
-
-file_prereplace = replace_all(payload,filestring);
-final_file = items_to_rows(payload,file_prereplace);
-write_to_file("./payloads/wea.fodt",final_file);
-fodt_to_pdf("wea.fodt");
