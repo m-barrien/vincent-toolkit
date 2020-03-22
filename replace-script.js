@@ -1,6 +1,6 @@
-const fs = require('fs')
-const path = require('path')
-
+const fs = require('fs');
+const path = require('path');
+const child_process = require('child_process');
 function replace_all(payload,filestring, opentag="&lt;&lt;" ,closetag="&gt;&gt;") {
 	_filestring = filestring + " ";
 	Object.keys(payload).forEach(function(key) {
@@ -43,10 +43,14 @@ function write_to_file(path, string, encoding="utf-8") {
 	}); 
 	return true;
 }
+function fodt_to_pdf(filename, outdir="./payloads/") {
+	child_process.execSync(`soffice --convert-to pdf --outdir ${outdir} ${outdir}${filename} --headless`);
+}
 var filestring = fs.readFileSync('./assets/cotizacion.fodt',"utf-8").toString();
 var payload = fs.readFileSync('./payload.json',"utf-8").toString();
 payload = JSON.parse(payload);
 
 file_prereplace = replace_all(payload,filestring);
 final_file = items_to_rows(payload,file_prereplace);
-write_to_file("./wea.fodt",final_file);
+write_to_file("./payloads/wea.fodt",final_file);
+fodt_to_pdf("wea.fodt");
