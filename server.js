@@ -2,50 +2,31 @@ const express = require('express')
 const fs = require('fs')
 const path = require('path')
 const app = express()
+var bodyParser = require('body-parser');
+const FODTmodule = require('./fodt-module.js');
 
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//app.use(express.static(path.join(__dirname, 'public')))
+
+app.use('/toolkit/pdf/cotizacion', express.static(__dirname + '/payloads/cotizacion.pdf'));
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.htm'))
 })
 
-app.post('/cotizacion', function(req, res) {
-  const path = 'assets/cotizacion.fodt'
-  const stat = fs.statSync(path)
-  const fileSize = stat.size
-  const range = req.headers.range
+app.post('/toolkit/cotizacion', function(req, res) {
+  var json_payload = req.body;
 
-  if (range) {
-    const parts = range.replace(/bytes=/, "").split("-")
-    const start = parseInt(parts[0], 10)
-    const end = parts[1]
-      ? parseInt(parts[1], 10)
-      : fileSize-1
+  var filestring = fs.readFileSync('./assets/cotizacion.fodt',"utf-8").toString();
 
-    if(start >= fileSize) {
-      res.status(416).send('Requested range not satisfiable\n'+start+' >= '+fileSize);
-      return
-    }
-    
-    const chunksize = (end-start)+1
-    const file = fs.createReadStream(path, {start, end})
-    const head = {
-      'Content-Range': `bytes ${start}-${end}/${fileSize}`,
-      'Accept-Ranges': 'bytes',
-      'Content-Length': chunksize,
-      'Content-Type': 'video/mp4',
-    }
+  file_prereplace = FODTmodule.replace_all(json_payload,filestring);
+  final_file = FODTmodule.replace_items_to_rows(json_payload,file_prereplace);
+  FODTmodule.string_to_file("./payloads/cotizacion.fodt",final_file);
+  FODTmodule.fodt_to_pdf("cotizacion.fodt");  
 
-    res.writeHead(206, head)
-    file.pipe(res)
-  } else {
-    const head = {
-      'Content-Length': fileSize,
-      'Content-Type': 'video/mp4',
-    }
-    res.writeHead(200, head)
-    fs.createReadStream(path).pipe(res)
-  }
+  res.redirect('/toolkit/pdf/cotizacion');
 })
 
 app.listen(3000, function () {
